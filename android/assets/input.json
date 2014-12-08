@@ -1,0 +1,10 @@
+{
+	keys:[
+		{name:return,keycodes:[Enter]},
+		{name:attack,keycodes:[Space]},
+		{name:up,keycodes:[W, Up]},
+		{name:down,keycodes:[S, Down]},
+		{name:left,keycodes:[A, Left]},
+		{name:right,keycodes:[D, Right]}
+	]
+}
