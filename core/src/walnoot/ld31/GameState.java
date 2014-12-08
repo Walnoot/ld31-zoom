@@ -147,8 +147,6 @@ public class GameState extends State {
 			player.setAlpha(1f - alpha);
 			player.setScale(1f - alpha);
 			gameCamera.position.set(tmp.set(0f, 0f).lerp(portal.pos, alpha), 0f);
-			gameCamera.position.add(MathUtils.random() * shakeTicks / SHAKE_TIME, MathUtils.random() * shakeTicks
-					/ SHAKE_TIME, 0f);
 			gameCamera.zoom = Interpolation.linear.apply(World.SIZE + .5f, 0.5f, alpha * alpha);
 		} else {
 			gameCamera.position.set(0f, 0f, 0f);
@@ -157,6 +155,9 @@ public class GameState extends State {
 			player.setAlpha(1f);
 			player.setScale(1f);
 		}
+		
+		gameCamera.position.add(MathUtils.random() * shakeTicks / SHAKE_TIME, MathUtils.random() * shakeTicks
+				/ SHAKE_TIME, 0f);
 		
 		gameCamera.update();
 		batch.setProjectionMatrix(gameCamera.combined);
